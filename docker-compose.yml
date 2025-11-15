@@ -13,7 +13,7 @@ services:
 
   backend:
     build: ./backend
-    image: your-username/vehicles-backend:latest 
+    image: kareemkaokab/vehicles-backend:latest 
     container_name: backend
     ports:
       - "5000:5000"
@@ -24,7 +24,7 @@ services:
 
   frontend:
     build: ./frontend
-    image: your-username/vehicles-frontend:latest
+    image: kareemkaokab/vehicles-frontend:latest
     container_name: frontend
     ports:
       - "5173:5173"
@@ -35,7 +35,7 @@ services:
 
   simulation:
     build: ./simulateVehicle
-    image: your-username/vehicles-simulation:latest
+    image: kareemkaokab/vehicles-simulation:latest
     container_name: simulation
     depends_on:
       - backend
