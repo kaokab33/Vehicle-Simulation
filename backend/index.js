@@ -4,6 +4,10 @@ const dotenv = require("dotenv");
 const express = require("express");
 const customerRouter = require("./routes/customerRoutes");
 const vehichelRouter = require("./routes/vehicleRoutes");
+const app = express();
+
+module.exports = app;
+
 process.on("uncaughtException", (err) => {
   console.log("UNCAUGHT EXCEPTION! Shutting down...");
   console.log(err.name, err.message);
@@ -18,7 +22,6 @@ mongoose
   })
   .catch((err) => console.log("DB connection error:", err));
 
-const app = express();
 const PORT = 5000;
 
 app.use(express.json());
