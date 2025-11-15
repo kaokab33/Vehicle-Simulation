@@ -1,0 +1,44 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: vehicle-monitor
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: mongodb://admin:admin123@mongo:27017/vehicle-monitor?authSource=admin
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_URL: http://backend:5000
+    depends_on:
+      - backend
+
+  simulation:
+    build: ./simulateVehicle
+    container_name: simulation
+    depends_on:
+      - backend
+      - mongo
+    environment:
+      MONGO_URI: mongodb://admin:admin123@mongo:27017/vehicle-monitor?authSource=admin
+
+volumes:
+  mongo-data:

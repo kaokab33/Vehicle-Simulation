@@ -1,0 +1,32 @@
+.customer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.customer-container h2 {
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1rem;
+}
+
+.customer-select {
+  width: 220px;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.customer-select:hover {
+  border-color: #0056b3;
+}
+
+.customer-select:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0,91,187,0.3);
+}
