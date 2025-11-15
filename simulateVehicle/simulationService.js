@@ -44,6 +44,8 @@ async function startSimulation() {
   }
 }
 
-startSimulation();
+if (process.env.NODE_ENV !== "test") {
+  startSimulation();
+}
 
 module.exports = { updateVehicleStatuses };

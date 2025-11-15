@@ -1,14 +1,15 @@
+jest.mock("mongoose", () => ({
+  connection: {},
+}));
+
 const mongoose = require("mongoose");
 const { updateVehicleStatuses } = require("../simulationService");
 
-jest.mock("mongoose");
-
 describe("Vehicle Simulation Tests", () => {
-  test("updateVehicleStatuses should read and update vehicles", async () => {
-    let mockCollection, mockDb;
+  let mockDb;
+  let mockCollection;
 
-    mongoose.connection = { db: {} };
-
+  beforeEach(() => {
     mockCollection = {
       find: jest.fn().mockReturnValue({
         toArray: jest.fn().mockResolvedValue([
@@ -24,8 +25,16 @@ describe("Vehicle Simulation Tests", () => {
     };
 
     mongoose.connection.db = mockDb;
-    jest.useFakeTimers();
 
+    jest.spyOn(console, "log").mockImplementation(() => {});
+    jest.spyOn(console, "error").mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  test("updateVehicleStatuses should read and update vehicles", async () => {
     await updateVehicleStatuses();
 
     expect(mockDb.collection).toHaveBeenCalledWith("vehicles");
