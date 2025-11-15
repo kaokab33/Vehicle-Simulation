@@ -6,13 +6,14 @@ services:
       - "27017:27017"
     environment:
       MONGO_INITDB_DATABASE: vehicle-monitor
-      MONGO_INITDB_ROOT_USERNAME: admin123
+      MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin123
     volumes:
       - mongo-data:/data/db
 
   backend:
     build: ./backend
+    image: your-username/vehicles-backend:latest 
     container_name: backend
     ports:
       - "5000:5000"
@@ -23,6 +24,7 @@ services:
 
   frontend:
     build: ./frontend
+    image: your-username/vehicles-frontend:latest
     container_name: frontend
     ports:
       - "5173:5173"
@@ -33,6 +35,7 @@ services:
 
   simulation:
     build: ./simulateVehicle
+    image: your-username/vehicles-simulation:latest
     container_name: simulation
     depends_on:
       - backend
