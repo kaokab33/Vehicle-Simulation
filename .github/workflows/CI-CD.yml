@@ -53,7 +53,7 @@ jobs:
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
       - name: Build Docker image
-        run: docker-compose build ${{ matrix.service }}
+        run: docker compose build ${{ matrix.service }}
 
       - name: Push Docker image
-        run: docker-compose push ${{ matrix.service }}
+        run: docker compose push ${{ matrix.service }}
