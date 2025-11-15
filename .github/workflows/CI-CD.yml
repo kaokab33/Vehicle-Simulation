@@ -38,7 +38,7 @@ jobs:
     if: github.event_name == 'push'
     strategy:
       matrix:
-        service: [backend, frontend, simulateVehicle]
+        service: [backend, frontend, simulation]
 
     steps:
       - name: Checkout code
