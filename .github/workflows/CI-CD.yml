@@ -60,6 +60,6 @@ jobs:
 
       - name: Test deployment with seed
         run: |
-          docker-compose up -d
+          docker compose up -d
           sleep 15
-          docker-compose exec backend node seed/seed.js
+          docker compose exec backend node seed/seed.js
