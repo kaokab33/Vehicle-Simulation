@@ -40,13 +40,6 @@ jobs:
     strategy:
       matrix:
         service: [backend, frontend, simulateVehicle]
-      include:
-        - service: backend
-          image_name: kareemkaokab/vehicles-backend
-        - service: frontend
-          image_name: kareemkaokab/vehicles-frontend
-        - service: simulation
-          image_name: kareemkaokab/vehicles-simulation
 
     steps:
       - name: Checkout code
