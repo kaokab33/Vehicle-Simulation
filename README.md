@@ -12,7 +12,7 @@ Approach: Node.js + Express backend, React frontend, MongoDB, a separate Simulat
 
 ## Contents
 
-Architecture (diagram + explanation)
+- Architecture (diagram + explanation)
 
 Data model
 
