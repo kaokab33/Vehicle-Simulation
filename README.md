@@ -37,13 +37,13 @@ flowchart LR
   end
 
   subgraph SERVICES
-    FE[Frontend (React)]
-    API[Backend API (Express)]
-    SIM[Simulation Service (Node/Express)]
+    FE[Frontend React]
+    API[Backend API Express]
+    SIM[Simulation Service Node/Express]
   end
 
   subgraph DATA
-    MONGO[(MongoDB)]
+    MONGO[MongoDB]
   end
 
   Browser -->|REST / Fetch| FE
