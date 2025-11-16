@@ -30,6 +30,29 @@ Approach: Node.js + Express backend, React frontend, MongoDB, a separate Simulat
 
 ### Diagram (Mermaid)
 
+```mermaid
+flowchart LR
+  subgraph USER
+    Browser[Browser (React SPA)]
+  end
+
+  subgraph SERVICES
+    FE[Frontend (React)]
+    API[Backend API (Express)]
+    SIM[Simulation Service (Node/Express)]
+  end
+
+  subgraph DATA
+    MONGO[(MongoDB)]
+  end
+
+  Browser -->|REST / Fetch| FE
+  FE -->|REST / HTTP| API
+  API -->|read/write| MONGO
+  SIM -->|writes status updates| MONGO
+  FE -.polls or websocket.-> API
+
+
 ### High-level explanation
 
 - Frontend (React) fetches `customers` and `vehicles` from the backend API and renders a full-screen dashboard with filters. It polls the requests data on filter changes.
@@ -98,10 +121,6 @@ From project root (where docker-compose.yml lives):
 # build & start all containers
 docker-compose up --build -d
 
-# view logs (optional)
-docker-compose logs -f api
-docker-compose logs -f simulation-service
-docker-compose logs -f frontend
 ```
 
 Services (default ports):
