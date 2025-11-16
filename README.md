@@ -14,22 +14,50 @@ Approach: Node.js + Express backend, React frontend, MongoDB, a separate Simulat
 
 - Architecture (diagram + explanation)
 
-Data model
+- Data model
 
-Simulation design (how it simulates vehicle pings)
+- Simulation design (how it simulates vehicle pings)
 
-How to run (local & Docker Compose)
+- How to run (local & Docker Compose)
 
-How to seed test data
+- How to seed test data
 
-API endpoints (list)
+- API endpoints (list)
 
-Tests & CI (what runs in CI)
+- Tests & CI (what runs in CI)
 
-Deployment options (recommended steps for cloud)
+- Deployment options (recommended steps for cloud)
 
-Operational notes & troubleshooting
+- Operational notes & troubleshooting
 
-Rationale & design decisions
+- Rationale & design decisions
 
-Next steps / optional enhancements
+- Next steps / optional enhancements
+
+## Architecture
+
+## Diagram (Mermaid)
+
+```mermaid
+flowchart LR
+  subgraph USER
+    Browser[Browser (React SPA)]
+  end
+
+  subgraph SERVICES
+    FE[Frontend (React)]
+    API[Backend API (Express)]
+    SIM[Simulation Service (Node/Express)]
+  end
+
+  subgraph DATA
+    MONGO[(MongoDB)]
+  end
+
+  Browser -->|REST / Fetch| FE
+  FE -->|REST / HTTP| API
+  API -->|read/write| MONGO
+  SIM -->|writes status updates| MONGO
+  FE -.polls or websocket.-> API
+
+```
