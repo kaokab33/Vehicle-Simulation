@@ -30,7 +30,7 @@ Approach: Node.js + Express backend, React frontend, MongoDB, a separate Simulat
 
 ### Diagram (Mermaid)
 
-````mermaid
+```mermaid
 flowchart LR
   subgraph USER
     Browser[Browser]
@@ -51,7 +51,7 @@ flowchart LR
   API -->|read/write| MONGO
   SIM -->|writes status updates| MONGO
   FE -.polls or websocket.-> API
-
+```
 
 ### High-level explanation
 
@@ -76,7 +76,7 @@ This separation follows a simple microservices style: each service is separate a
   "regNr": "ABC123",
   "status": "Connected" // or "Disconnected"
 }
-````
+```
 
 ### `Customer` (collection customers)
 
