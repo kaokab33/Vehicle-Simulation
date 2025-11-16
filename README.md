@@ -30,10 +30,10 @@ Approach: Node.js + Express backend, React frontend, MongoDB, a separate Simulat
 
 ### Diagram (Mermaid)
 
-```mermaid
+````mermaid
 flowchart LR
   subgraph USER
-    Browser[Browser (React SPA)]
+    Browser[Browser]
   end
 
   subgraph SERVICES
@@ -76,7 +76,7 @@ This separation follows a simple microservices style: each service is separate a
   "regNr": "ABC123",
   "status": "Connected" // or "Disconnected"
 }
-```
+````
 
 ### `Customer` (collection customers)
 
