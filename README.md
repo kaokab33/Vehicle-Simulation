@@ -80,10 +80,10 @@ This separation follows a simple microservices style: each service is separate a
 
 - Logic(runs every 1 minute):
 
-- - Fetch all vehicles from MongoDB.
+  - Fetch all vehicles from MongoDB.
 
-- - For each vehicle, compute status = (Math.random() < 0.5 ? "Connected" : "Disconnected").
+  - For each vehicle, compute status = (Math.random() < 0.5 ? "Connected" : "Disconnected").
 
-- - Save vehicle only if status changed (reduces write churn).
+  - Save vehicle only if status changed (reduces write churn).
 
 - Why separate service: isolates simulation load from API, easier to scale, follows microservice separation of concerns.
