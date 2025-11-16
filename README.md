@@ -28,7 +28,7 @@ Approach: Node.js + Express backend, React frontend, MongoDB, a separate Simulat
 
 ## Architecture
 
-### Diagram (Mermaid)
+### Diagram
 
 ```mermaid
 flowchart LR
