@@ -30,7 +30,7 @@ Approach: Node.js + Express backend, React frontend, MongoDB, a separate Simulat
 
 ## Demo Video
 
-<video controls src="https://github.com/kaokab33/Vehicle-Simulation/blob/main/demo.mp4" title="Demo"></video>
+<video controls src="https://github.com/user-attachments/assets/fc310985-7556-49d5-83b0-432ee96e66aa" title="Demo"></video>
 
 ## Architecture
 
