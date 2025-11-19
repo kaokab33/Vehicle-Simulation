@@ -11,6 +11,7 @@ Goal: provide a datastore holding customers and vehicles + a SPA dashboard with 
 Approach: Node.js + Express backend, React frontend, MongoDB, a separate Simulation microservice, Dockerized and CI tested.
 
 ## Contents
+
 - Demo Video
 
 - Architecture (diagram + explanation)
@@ -29,7 +30,7 @@ Approach: Node.js + Express backend, React frontend, MongoDB, a separate Simulat
 
 ## Demo Video
 
-<video src="demo.mp4" controls width="600"></video>
+<video controls src="https://github.com/kaokab33/Vehicle-Simulation/blob/main/demo.mp4" title="Demo"></video>
 
 ## Architecture
 
