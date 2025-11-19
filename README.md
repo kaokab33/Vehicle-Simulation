@@ -56,7 +56,6 @@ flowchart LR
   FE -->|REST / HTTP| API
   API -->|read/write| MONGO
   SIM -->|writes status updates| MONGO
-  FE -.polls or websocket.-> API
 ```
 
 ### High-level explanation
